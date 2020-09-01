@@ -1,39 +1,24 @@
 const express = require('express');
 const routes = express.Router();
-//const OrdemServicoController = require('./controllers/OrdemServicoController');
-const mongo = require('./server')
+const OrdemServicoController = require('./controllers/OrdemServicoController');
+const CacambasController = require('./controllers/CacambasController');
+const EstoqueController = require('./controllers/EstoqueController');
+const mongo = require('./database/db')
 
 
+/*ORDEM DE SERVIÇO */
+routes.get('/ordem_servico',OrdemServicoController.index);
+routes.post('/ordem_servico',OrdemServicoController.create);
 
-routes.get('/ordem_servico',(req,res)=>{
-    res.json({message:'Index ok'})
-});
 
+/* CAÇAMBAS */
+routes.get('/cacambas',CacambasController.index);
+routes.post('/cacambas',CacambasController.create);
+routes.put('/cacambas/:_id', CacambasController.put)
+routes.delete('/cacambas/:_id',CacambasController.delete)
 
-routes.post('/ordem_servico',(req,res)=>{   
-    const {
-        dt_Locacao,
-        dt_Remocao, 
-        quantidade,
-        cep_Locacao,
-        numero_Locacao,
-        valor_Pedidio
-    } = req.body
-
-    console.log(req.body)
-    
-    res.json({message:
-        `POST realizado com sucesso
-        ${dt_Locacao},
-        ${dt_Remocao},
-        ${quantidade},
-        ${cep_Locacao},
-        ${numero_Locacao}
-        ${valor_Pedidio} `
-    })
-   
-}
-);
-
+/* ESTOQUE */
+routes.get('/estoque',EstoqueController.index);
+routes.post('/estoque',EstoqueController.create);
 
 module.exports =routes
