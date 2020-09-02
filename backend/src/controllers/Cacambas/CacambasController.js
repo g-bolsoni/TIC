@@ -1,8 +1,9 @@
-const CacambaSchema = require("../database/Schema/CacambaSchema")
+const CacambaSchema = require("./Schema/CacambaSchema")
 
  /*GET */
 module.exports.index= async (req,res)=>{
-    const cacamba = await CacambaSchema.find()
+    const cacamba = await CacambaSchema.find();
+    
     res.json(cacamba)
  }
  /*POST */
@@ -13,12 +14,9 @@ module.exports.index= async (req,res)=>{
         residuo,
         tamanho
     }=req.body
-
-    const cacamba = await CacambaSchema.create({cod_cacamba,valor,residuo,tamanho});
-
-    res.json(cacamba._id)
-
-    console.log({cod_cacamba,valor,residuo,tamanho})
+    
+        const cacamba = await CacambaSchema.create({cod_cacamba,valor,residuo,tamanho});
+        return res.json({cacamba});
 }
 
 /*PUT */

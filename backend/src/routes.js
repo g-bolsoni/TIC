@@ -1,8 +1,8 @@
 const express = require('express');
 const routes = express.Router();
-const OrdemServicoController = require('./controllers/OrdemServicoController');
-const CacambasController = require('./controllers/CacambasController');
-const EstoqueController = require('./controllers/EstoqueController');
+const OrdemServicoController = require('./controllers/OrdemServico/OrdemServicoController');
+const CacambasController = require('./controllers/Cacambas/CacambasController');
+const EstoqueController = require('./controllers/Estoque/EstoqueController');
 const mongo = require('./database/db')
 
 
@@ -20,5 +20,8 @@ routes.delete('/cacambas/:_id',CacambasController.delete)
 /* ESTOQUE */
 routes.get('/estoque',EstoqueController.index);
 routes.post('/estoque',EstoqueController.create);
+routes.put('/estoque/:_id',EstoqueController.put);
+routes.delete('/estoque/:_id',EstoqueController.delete);
+
 
 module.exports =routes
