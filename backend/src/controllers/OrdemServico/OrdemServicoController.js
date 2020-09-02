@@ -1,11 +1,13 @@
-
+const OrdemServico =require( './Schema/OrdemServicoSchema')
     /*GET */
-    module.exports.index=function(req,res){
-        res.json({message:'OS (GET)'})
+    module.exports.index=async (req,res)=>{
+        const indexOS = await OrdemServico.find()
+        res.json(indexOS);
      }
      /*POST */
-     module.exports.create=function(req,res){   
+     module.exports.create=async (req,res)=>{   
          const {
+             cod_os,
              dt_Locacao,
              dt_Remocao, 
              quantidade,
@@ -14,16 +16,27 @@
              valor_Pedidio
          } = req.body
      
-         console.log(req.body)
-         
-         res.json({message:
-             `POST realizado com sucesso OS
-             ${dt_Locacao},
-             ${dt_Remocao},
-             ${quantidade},
-             ${cep_Locacao},
-             ${numero_Locacao}
-             ${valor_Pedidio} `
-         })
+         const createOS = await OrdemServico.create({cod_os,dt_Locacao,
+                                              dt_Remocao,
+                                              quantidade,
+                                              cep_Locacao,
+                                              numero_Locacao,
+                                              valor_Pedidio});
+         res.json({createOS})
      }
- 
+ /* DELETE */
+module.exports.delete = async (req,res)=>{
+    const id = req.params._id
+    console.log(id)
+    const deleteOS = await OrdemServico.findByIdAndDelete(id)
+    res.json(deleteOS)
+}
+
+/*PUT*/
+
+module.exports.put = async (req,res)=>{
+    const id =  req.params._id;
+    console.log(id)
+    const putOS = await OrdemServico.findByIdAndUpdate(id,req.body)
+    res.json(putOS)
+}

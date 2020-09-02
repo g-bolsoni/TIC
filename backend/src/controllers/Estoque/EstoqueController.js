@@ -8,10 +8,8 @@ module.exports.index= async (req,res)=>{
  /*POST */
  module.exports.create= async (req,res)=>{   
     const {nome_Estoque}=req.body
-    console.log(nome_Estoque)
 
     const nome = await EstoqueSchema.create({nome_Estoque})
-    console.log(nome)
 
     res.json({nome})
 }
