@@ -26,7 +26,7 @@ module.exports.put = async (req,res)=>{
        return res.json({mensagem:'informe os campos '})
     }
     const up = await CacambaSchema.findByIdAndUpdate(id,req.body);
-    return res.json(up)
+    return res.json(up);
 }
     
 

@@ -1,9 +1,10 @@
 import React from 'react';
+import Home from './pages/Home/Index.js'
 
 function App() {
   return (
     <div>
-        <h1>OLA MUNDO / PROJETO </h1>
+      <Home/>
     </div>
   );
 }
