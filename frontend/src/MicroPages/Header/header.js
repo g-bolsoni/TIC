@@ -16,7 +16,7 @@ function Header (){
                             <Link class="nav-link" to="/cacamba">Caçambas <span class="sr-only">(current)</span></Link>
                         </li>
                         <li class="nav-item">
-                            <Link class="nav-link" to="/">Ordem de Serviço</Link>
+                            <Link class="nav-link" to="/ordemServico">Ordem de Serviço</Link>
                         </li>
                         {/*<li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -30,7 +30,7 @@ function Header (){
                             </div>
                         </li>*/}
                         <li class="nav-item">
-                            <Link class="nav-link" to="#">Estoque</Link>
+                            <Link class="nav-link" to="/estoque">Estoque</Link>
                         </li>
                     </ul>
                     <form class="form-inline my-2 my-lg-0">
