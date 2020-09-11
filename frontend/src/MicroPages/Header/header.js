@@ -43,3 +43,34 @@ function Header (){
     )
 }
 export default Header;
+
+
+
+{/*import {Link} from 'react-router-dom'
+
+function Menu (){
+    return(
+        <div className="">
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+                <Link class="navbar-brand" to="#">LOGO</Link>
+                
+
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item ">
+                            <Link class="nav-link" to="#">Tarefas <span class="sr-only">(current)</span></Link>
+                        </li>
+                        <li class="nav-item">
+                            <Link class="nav-link" to="#">About</Link>
+                        </li>
+                       
+                       
+                    </ul>
+                  
+                </div>
+            </nav>
+        </div>
+    )
+}
+export default Menu;
+ */}
